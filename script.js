@@ -20,25 +20,40 @@ var button = document.getElementById('againButton');
 
 $(function() {
 
-    jQuery.fn.extend({
-        disable: function(state) {
-            return this.each(function() {
-                this.disabled = state;
-            });
-        }
-    });
+  cube.execute("x (R' U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 R2 x'");
+  
+  $('button').click(function(){
+       if( $('button').prop('disabled') ) {
+           alert('disabled');
+           $('button').prop('disabled',false);
+       }
+       else {
+           alert('enabled');
+           $('button').prop('disabled',true);
+       }
+   });
 
-    // $("#deliveryNext").is(":disabled")
 
-    $(function(){
-      cube.execute("x (R' U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 R2 x'");
-      $('button').is(":disabled")
-
-
-    $('button').click(function(){
-      cube.execute("x (R' U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 R2 x'");
-    })
-    });
+    // jQuery.fn.extend({
+    //     disable: function(state) {
+    //         return this.each(function() {
+    //             this.disabled = state;
+    //         });
+    //     }
+    // });
+    //
+    // // $("#deliveryNext").is(":disabled")
+    //
+    // $(function(){
+    //   if(cube.execute("x (R' U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 R2 x'")){
+    //   $('button').is(":disabled");
+    // }
+    // $('button').click(function(){
+    //   cube.execute("x (R' U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 (R U R') D2 (R U' R') D2 R2 x'");
+    // })
+    //
+    //
+    // });
 });
 //
 //
